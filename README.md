@@ -91,7 +91,7 @@ Testfälle bilden deshalb nach, wie der echte Aufrufer schickt.
 | `probe-reviewer` | nur Log, Memory | nur `probelauf.py` | – |
 | `prompt-reviewer` | nur Log, Memory | nur `probelauf.py --lesen` | – |
 
-Niemand committet oder pusht; das blockt der Hook. Zwei Lücken sind echt:
+Kein Agent dieser Pipeline committet oder pusht; das blockt der Hook. Er prüft nur die Agenten dieser Pipeline, deine eigenen Sessions und die Agenten anderer Plugins lässt er durch. Zwei Lücken sind echt:
 
 - Drei Agenten lesen nur, dürfen aber Befehle ausführen. Über die Shell könnten sie am
   Hook vorbei schreiben. Die Grenze „nur das Probelauf-Skript“ steht nur in ihrem Text.

@@ -29,6 +29,16 @@ policy="${CLAUDE_PROJECT_DIR}/pipeline-policy.json"
 # No policy: allow. A half-installed plugin must not brick the session.
 [[ -f "$policy" ]] || exit 0
 
+# Guard only this pipeline's agents. A plugin's hooks run in every session it is
+# installed in, so the main session and other plugins' agents must pass; same
+# filter as timing.sh.
+raw=$(jq -r '.agent_type // ""' <<<"$input")
+[[ -n "$raw" ]] || exit 0
+if [[ "$raw" != prompt-engineer:* ]]; then
+  [[ "$raw" == *:* ]] && exit 0
+  jq -e --arg a "$raw" '.agents[$a]' "$policy" >/dev/null 2>&1 || exit 0
+fi
+
 if [[ "$tool" == "Bash" ]]; then
   cmd=$(jq -r '.tool_input.command // ""' <<<"$input")
   if grep -Eq '(^|[;&|[:space:]])git[[:space:]]+(commit|push)([[:space:]]|$)' <<<"$cmd"; then

@@ -1,0 +1,13 @@
+{
+  "name": "prompt-engineer",
+  "description": "Marketplace für das prompt-engineer Plugin: Agenten-Pipeline, die Prompts prüft, mit dir klärt und mit echten Probeläufen schärft.",
+  "owner": { "name": "MakeNative" },
+  "plugins": [
+    {
+      "name": "prompt-engineer",
+      "source": "./",
+      "description": "Prüft einen Prompt wie ein Prompt Engineer, klärt mit dir, was der Agent genau tun soll, schärft ihn mit belegten Schutzbausteinen und weist mit echten Probeläufen nach, dass er wirkt.",
+      "author": { "name": "ceichmueller" }
+    }
+  ]
+}

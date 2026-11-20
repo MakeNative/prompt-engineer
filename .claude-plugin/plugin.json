@@ -1,0 +1,7 @@
+{
+  "name": "prompt-engineer",
+  "description": "Prüft einen Prompt wie ein Prompt Engineer, klärt mit dir, was der Agent genau tun soll, schärft ihn mit belegten Schutzbausteinen wie „erfinde nichts“ und weist mit echten Probeläufen vorher und nachher nach, dass er wirkt.",
+  "version": "0.1.0",
+  "author": { "name": "ceichmueller" },
+  "license": "MIT"
+}

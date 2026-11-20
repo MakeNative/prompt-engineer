@@ -1,0 +1,51 @@
+{
+  "contractPaths": [
+    "/\\.claude/prompt-engineer/[^/]+/(tests|baseline)/"
+  ],
+  "agents": {
+    "run-setup": {
+      "phase": "FRAMEWORK",
+      "deny": "all"
+    },
+    "run-summary": {
+      "phase": "FRAMEWORK",
+      "deny": "all"
+    },
+    "run-evaluator": {
+      "phase": "EVALUATE",
+      "deny": "all"
+    },
+    "pipeline-evaluator": {
+      "phase": "EVALUATE",
+      "deny": "all"
+    },
+    "prompt-auditor": {
+      "phase": "EVALUATE",
+      "deny": "all"
+    },
+    "prompt-diagnostician": {
+      "phase": "PLAN",
+      "deny": "all"
+    },
+    "intent-planner": {
+      "phase": "PLAN",
+      "deny": "all"
+    },
+    "test-case-writer": {
+      "phase": "BUILD",
+      "deny": "non-contract"
+    },
+    "prompt-writer": {
+      "phase": "BUILD",
+      "deny": "contract"
+    },
+    "probe-reviewer": {
+      "phase": "REVIEW",
+      "deny": "all"
+    },
+    "prompt-reviewer": {
+      "phase": "REVIEW",
+      "deny": "all"
+    }
+  }
+}

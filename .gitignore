@@ -1,0 +1,8 @@
+# Laufdaten bleiben im Projekt, in dem die Pipeline läuft, nie im Repo,
+# auch nicht beim Ausprobieren im Beispielordner
+**/.claude/runs/
+**/.claude/prompt-engineer/
+**/.claude/agent-memory/
+**/.claude/evals/
+**/.claude/docs/
+.DS_Store
